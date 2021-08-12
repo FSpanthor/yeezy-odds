@@ -7,14 +7,31 @@ import SelectSize from "./SelectSize";
 import NumberOfEntries from "./NumberOfEntries";
 import Results from "./Results";
 import MailingList from "./MailingList";
+import styled from 'styled-components';
+
+const Title = styled.h1 `
+text-align: center;
+`;
+
+const Instructions = styled.p `
+text-align: center;
+`;
+
+const Page = styled.div `
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+`;
+
 const StartPage = (props) => {
 	return (
-		<div>
-			<h1>YEEZY ODDS</h1>
-			<p>
+		<Page>
+			<Title>YEEZY ODDS</Title>
+			<Instructions>
 				SIMULATE A YEEZY DROP USING OUR STATE OF THE ART SIM TECH. GO
 				INTO THE DRAW KNOWING WHATS UP. WILL YOU COP??
-			</p>
+			</Instructions>
 			<SelectDrop />
 			<SelectSize />
 			<NumberOfEntries />
@@ -23,7 +40,7 @@ const StartPage = (props) => {
 			<Link to="/FAQ">
 				<button>FAQ</button>
 			</Link>
-		</div>
+		</Page>
 	);
 };
 

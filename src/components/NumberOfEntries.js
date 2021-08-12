@@ -10,7 +10,7 @@ const NumberOfEntries = ({ entries, setEntries, setSimComplete }) => {
 	return (
 		<div>
 			<label htmlFor="numberOfEntries">
-				Number of Entries (max of 100):
+				Entries (max of 100) 
 			</label>
 			<input
 				type="number"

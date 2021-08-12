@@ -2,6 +2,15 @@ import database from "../firebase/firebase";
 import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import { setSimComplete } from "../actions/selectItem";
+import styled from 'styled-components';
+
+const ResultsDiv = styled.div `
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+`;
+
 
 const Results = (props) => {
 	const [stock, setStock] = useState();
@@ -123,19 +132,19 @@ const Results = (props) => {
     }, [stock, hypeFactor, simRunning])
 
 	return (
-		<div>
+		<ResultsDiv>
 			<button onClick={handleClick}>Simulate Drop</button>
 			{winStatus && props.simComplete ? (
-				<div>
+				<ResultsDiv>
 					<p>W: COPPED</p>
 					<p>Wow that was easy.. you are ready</p>
-				</div>
+				</ResultsDiv>
 			) : null}
 			{winStatus === false && props.simComplete ? (
-				<div>
+				<ResultsDiv>
 					<p>L</p>
 					<p>Sorry, didn't get 'em this time</p>
-				</div>
+				</ResultsDiv>
 			) : null}
 			{props.simComplete ? (
 				<p>
@@ -152,7 +161,7 @@ const Results = (props) => {
 					</p>
 				</div>
 			) : null}
-		</div>
+		</ResultsDiv>
 	);
 };
 

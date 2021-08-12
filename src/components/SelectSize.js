@@ -41,7 +41,7 @@ const SelectSize = ({ size, drop, setSize, setSimComplete }) => {
 
 	return (
 		<div>
-			<label htmlFor="size">Select a size:</label>
+			
 			<select name="size" id="size" onChange={sizeChangeHandler}>
 			<option disabled selected value> -- select a size -- </option>
 			{sizesList.sort((a,b) => a - b).map((x, y) => 

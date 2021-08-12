@@ -2,6 +2,11 @@ import React, { useState, useEffect } from "react";
 import database from "../firebase/firebase";
 import { connect } from "react-redux";
 import { setDrop, setSimComplete } from "../actions/selectItem";
+import styled from 'styled-components';
+
+const DropDropdown = styled.select `
+color: red;
+`;
 
 const SelectDrop = ({ setDrop, setSimComplete, stock }) => {
 	const dropChangeHandler = (e) => {
@@ -24,12 +29,12 @@ const SelectDrop = ({ setDrop, setSimComplete, stock }) => {
 	useEffect(() => retrieveDrops(), []);
 
 	return (
-		<select name="drop" id="drop" onChange={dropChangeHandler}>
+		<DropDropdown name="drop" id="drop" onChange={dropChangeHandler}>
 			<option disabled selected value> -- select an drop -- </option>
 			{list.map((x, y) => (
 				<option key={y}>{x}</option>
 			))}
-		</select>
+		</DropDropdown>
 	
 	);
 };
